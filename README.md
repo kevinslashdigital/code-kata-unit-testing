@@ -7,8 +7,8 @@
 1. Install packages
 `npm install`
 
-2. Install packages
+2. Run Test Cases
 `npm run test`
 
-3. Install packages
+3. Run Test Coverage
 `npm run test:coverage`
