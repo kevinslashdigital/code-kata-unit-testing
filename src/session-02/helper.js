@@ -8,8 +8,11 @@ const getFullName = (firstName, lastName) => {
 
 const getRandomNumber = () => Math.random();
 
-//TODO: add unit testing to greet() function and mock getFullName fn
-//TODO: add unit to getRandomNumber() function and mock Math fn
+/*
+TODO: 
+1. add unit testing to greet() function and mock getFullName fn
+2. add unit to getRandomNumber() function and mock Math fn
+*/
 
 module.exports = {
   greet,
