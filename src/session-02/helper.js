@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const greet = (firstName, lastName) => {
   return `Hello ${this.getFullName(firstName, lastName)}`;
 };
@@ -8,6 +10,10 @@ const getFullName = (firstName, lastName) => {
 
 const getRandomNumber = () => Math.random();
 
+const getEnvs = () => ({
+  API: process.env.API,
+});
+
 /*
 TODO: 
 1. add unit testing to greet() function and mock getFullName fn
@@ -16,6 +22,7 @@ TODO:
 
 module.exports = {
   greet,
+  getEnvs,
   getFullName,
   getRandomNumber,
 };
