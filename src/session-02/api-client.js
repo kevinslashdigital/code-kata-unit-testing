@@ -1,13 +1,40 @@
-const axios = require('axios');
-const fetch = require('node-fetch');
+const axios = require("axios");
+const helper = require("./helper");
 
-const API = `https://31fd1a6d-964b-4f00-9465-cc26d26c2cf2.mock.pstmn.io/api`;
+const API = `${helper.getEnvs().API}/api`;
 
 const getMovies = async () => {
-  console.log('F:', fetch);
-  const result = await fetch(`${API}/movies`);
-  const data = await result.json();
-  return data;
+  return axios
+    .get(`${API}/movies`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      return [];
+    });
 };
 
-module.exports = { getMovies };
+const addMovie = async (name) => {
+  return axios
+    .post(`${API}/movies`, {
+      name,
+    })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((e) => {
+      return "something went wrong";
+    });
+};
+
+/*
+TODO: 
+1. add unit testing to getMovies() function and mock axios.get call
+  → test case when successfully response
+  → test case when error in the response
+2. add unit to addMovie() function  and mock axios.post call
+  → test case when successfully response
+  → test case when error in the response
+*/
+
+module.exports = { addMovie, getMovies };
