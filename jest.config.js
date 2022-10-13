@@ -1,6 +1,6 @@
 module.exports = {
   verbose: true,
-  //   setupFiles: ["<rootDir>/jest/setEnvVars.js"],
+  // setupFiles: ["<rootDir>/jest/setEnvVars.js"],
   collectCoverage: true,
   collectCoverageFrom: ["./src/**"],
   coverageThreshold: {
