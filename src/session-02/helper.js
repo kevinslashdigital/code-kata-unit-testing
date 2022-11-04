@@ -1,7 +1,8 @@
 require("dotenv").config();
 
 const greet = (firstName, lastName) => {
-  return `Hello ${this.getFullName(firstName, lastName)}`;
+  console.log("getFullName:", getFullName);
+  return `Hello ${getFullName(firstName, lastName)}`;
 };
 
 const getFullName = (firstName, lastName) => {
