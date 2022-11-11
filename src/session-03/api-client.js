@@ -1,8 +1,7 @@
 const axios = require("axios");
-const path = require("path");
-require("dotenv").config({ path: path.resolve("../.env") });
+const helper = require("../session-02/helper");
 
-const API = `${process.env.API}/api`;
+const API = `${helper.getEnvs().API}/api`;
 
 const getMovies = async () => {
   try {
