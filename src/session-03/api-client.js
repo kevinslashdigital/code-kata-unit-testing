@@ -19,7 +19,7 @@ const addMovie = async (name) => {
     });
     return data;
   } catch (error) {
-    return "Something went wrong adding movie!";
+    return "Something went wrong when adding movie!";
   }
 };
 
