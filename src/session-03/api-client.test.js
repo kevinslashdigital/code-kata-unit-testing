@@ -9,14 +9,10 @@ jest.mock("../session-02/helper.js", () => ({
 
 describe("# getMovies", () => {
   it("should return users list when axios response is successfully", async () => {
-    // arrange
-    // act
-    // assert
+    // Your code here...
   });
 
   it("should return error  when there is one error in the endpoint request", async () => {
-    // arrange
-    // act
-    // assert
+    // Your code here...
   });
 });
