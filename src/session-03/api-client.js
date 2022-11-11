@@ -1,30 +1,27 @@
 const axios = require("axios");
-const helper = require("./helper");
+const path = require("path");
+require("dotenv").config({ path: path.resolve("../.env") });
 
-const API = `${helper.getEnvs().API}/api`;
+const API = `${process.env.API}/api`;
 
 const getMovies = async () => {
-  return axios
-    .get(`${API}/movies`)
-    .then((res) => {
-      return res.data;
-    })
-    .catch((e) => {
-      return [];
-    });
+  try {
+    const { data } = await axios.get(`${API}/movies`);
+    return data;
+  } catch (error) {
+    return "Something went wrong when getting movies!";
+  }
 };
 
 const addMovie = async (name) => {
-  return axios
-    .post(`${API}/movies`, {
+  try {
+    const { data } = await axios.post(`${API}/movies`, {
       name,
-    })
-    .then((res) => {
-      return res.data;
-    })
-    .catch((e) => {
-      return "something went wrong";
     });
+    return data;
+  } catch (error) {
+    return "Something went wrong adding movie!";
+  }
 };
 
 /*
